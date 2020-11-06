@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="gestion-etudiants">Gestion Etudiants</h1>
+<p>Dans un fichier <strong>student.h</strong> déclarez la structure suivante :</p>
+<p><code>typedef struct {     char * name;     int birthYear;     int id; } Student;</code></p>
+<p>Dans le même fichier, définir une fonction <code>Student * student_create(void)</code> qui demande dans le terminal, le nom, l'année de naissance et l'identifiant de l'étudiant (dans cet ordre) et retourne un pointeur vers la structure <code>Student</code> correspondante. En cas de problème d'allocation, cette fonction doit retourner <code>NULL</code>. On pourra limiter la taille du nom à 1000.</p>
+<p>Dans le même fichier, définir une fonction <code>void student_print(Student * s)</code> qui affiche les informations de l'étudiant envoyé en argument sous le format suivant : <code>id:        identifiant name:      nom de l'étudiant birthYear: année de naissance</code> exemple: <code>id:        14 name:      Bob birthYear: 1978</code></p>
+<p>Dans le même fichier, définir une fonction <code>void student_free(Student * s)</code> qui libère la mémoire qui a été allouée pour l'étudiant passé en argument. Si le pointeur passé en argument est <code>NULL</code>, cette fonction ne fait rien.</p>
+</body>
+</html>

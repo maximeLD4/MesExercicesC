@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="repeat">Repeat</h2>
+<p>Vous devez écrire un programme (dans un fichier <code>repeat.c</code>) qui permet, à partir d'une chaine de caractères donnée, affiche une nouvelle chaine de caractères identique à la première <em>mais ou chaque caractère est répété un certain nombre de fois</em>.</p>
+<p>Exemple, la chaine <code>Hello</code> où chaque caractère est répété 3 fois devient: <code>HHHeeellllllooo</code>.</p>
+<p>Le script de test est divisé en plusieurs parties, de difficulté croissante. Chaque partie ajoute de nouvelle fonctionnalités. Lorsque la première partie est implémentée, les 10 premiers tests doivent passer. Ensuite <em>faite attention de ne pas casser ce que vous avez fait lorsque vous implémentez la deuxième partie</em>, en effet, après avoir implémenter la deuxième partie, Les tests de 11 à 20 doivent passer, mais les 10 premiers tests doivent encore fonctionner!!</p>
+<h2 id="première-partie.">Première partie.</h2>
+<p>Pour commencer, on supposera que votre programme doit lire la chaine de caractères originale dans le terminal. <em>On pourra supposer qu'elle est de taille inférieure ou égale à 50000.</em> Puis votre programme doit lire un entier <code>n</code> (compris entre 0 et 1000000). Ensuite votre programme doit afficher nouvelle chaine ou chaque caractère est répété <code>n</code> fois.</p>
+<h4 id="exemple-1">Exemple 1</h4>
+<p>Entrée: `<code>̀</code> Hello 3 ```</p>
+<p>Sortie:</p>
+<p>`<code>̀</code> HHHeeellllllooo ```</p>
+<h4 id="exemple-2">Exemple 2</h4>
+<p>Entrée: `<code>̀</code> Hello 0 ```</p>
+<p>Sortie:</p>
+<p>`<code>̀</code></p>
+<p>```</p>
+<h4 id="exemple-3">Exemple 3</h4>
+<p>Entrée: `<code>̀</code> Lorem ipsum. 2 ```</p>
+<p>Sortie:</p>
+<p>`<code>̀</code> LLoorreemm iippssuumm.. ```</p>
+<h2 id="deuxième-partie.">Deuxième partie.</h2>
+<p>Pour cette partie, vous ferez en sorte que votre programme accepte que la chaine original proviennent des arguments de ligne de commande. <em>Si la chaine original et le nombre de répétition sont donnée en arguments de ligne de commande alors l'entrée standart du terminal sera ignorée</em>. Le fonctionnement du programme reste similaire (et les limites donnée sur les tailles aussi).</p>
+<p>Pour convertir une chaine de caractère en entier (notamment pour convertir <code>argv[2]</code> en entier), on pourra utiliser la fonction <code>atoi</code>: <code>int atoi(const char *nptr);</code></p>
+<h4 id="exemple-1-1">Exemple 1</h4>
+<p>Exécution: `<code>̀</code> $ ./repeat Hello 3 HHHeeellllllooo ```</p>
+<h4 id="exemple-2-1">Exemple 2</h4>
+<p>Exécution: `<code>̀</code> $ ./repeat Hello 0 ```</p>
+<h4 id="exemple-3-1">Exemple 3</h4>
+<p>Exécution: `<code>̀</code> $ ./repeat &quot;Lorem ipsum.&quot; 2 LLoorreemm iippssuumm.. ```</p>
+<h2 id="troisième-partie.">Troisième partie.</h2>
+<p>Pour cette partie, on suppose que le nombre de répétition est compris entre -1000000 et 1000000. Si le nombre de répétition est négatif, en plus d'effectuer les répétitions comme précédemment, la chaine doit être inversée.</p>
+<h4 id="exemple-1-2">Exemple 1</h4>
+<p>Exécution: `<code>̀</code> $ ./repeat Hello -3 ooolllllleeeHHH ```</p>
+<h4 id="exemple-2-2">Exemple 2</h4>
+<p>Entrée: `<code>̀</code> Lorem ipsum. -2 ```</p>
+<p>Sortie:</p>
+<p>`<code>̀</code> ..mmuussppii mmeerrooLL ```</p>
+</body>
+</html>

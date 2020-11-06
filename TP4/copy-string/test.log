@@ -1,0 +1,28 @@
+
+####
+#### Compilation
+####
+In file included from tests.c:3:
+copy.h: In function ‘copy’:
+copy.h:10:1: error: implicit declaration of function ‘strcpy’ [-Werror=implicit-function-declaration]
+   10 | strcpy(ch2, ch1);
+      | ^~~~~~
+copy.h:10:1: error: incompatible implicit declaration of built-in function ‘strcpy’ [-Werror]
+copy.h:1:1: note: include ‘<string.h>’ or provide a declaration of ‘strcpy’
+  +++ |+#include <string.h>
+    1 | #include<stdio.h>
+copy.h:10:8: error: passing argument 1 of ‘strcpy’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   10 | strcpy(ch2, ch1);
+      |        ^~~
+      |        |
+      |        char **
+copy.h:10:8: note: expected ‘char *’ but argument is of type ‘char **’
+In file included from tests.c:2:
+tests.c: In function ‘test_example_2’:
+tests.c:20:14: error: implicit declaration of function ‘strcmp’ [-Werror=implicit-function-declaration]
+   20 |   tps_assert(strcmp(str1, str2) == 0);
+      |              ^~~~~~
+tps_unit_test.h:30:11: note: in definition of macro ‘tps_assert’
+   30 |     if (!(expr)) { \
+      |           ^~~~
+cc1: all warnings being treated as errors

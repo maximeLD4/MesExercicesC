@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="déchiffrement-2">Déchiffrement 2</h1>
+<p>Comme l'exercice 'uncrypt', vous interceptez les communications ennemis et souhaitez les déchiffrer.</p>
+<p>Cependant ici l'algorithme appliqué est le Chiffre de Vigenère <a href="https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re">C'est quoi?</a>.</p>
+<p>Chaque jour, les ennemis change la clé, mais on sait qu'elle fait 8 caractères de long.</p>
+<p>Chaque jour les ennemis commencent par envoyer cette phrase pour se dire bonjour : <code>bonjour les amis.</code></p>
+<p>Les caractères spéciaux (et espaces) ne sont pas pris en compte lors par le chiffrement, ainsi le 8eme caractère de la clé servira à chiffrer la lettre 'l' du texte ci-dessus.</p>
+<p>Ecrire un algorithme qui lit dans le terminal le texte envoyé ce jour par vos ennemis, le déchiffre, et affiche le résultat.</p>
+<h3 id="exemple">Exemple</h3>
+<p>Entrée : <code>ocdmcih jrg qpwg. qrgogxcbi braqlb à 10v</code> Sortie : <code>bonjour les amis. attaquons demain à 10h</code></p>
+</body>
+</html>

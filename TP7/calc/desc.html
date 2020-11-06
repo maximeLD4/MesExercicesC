@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="projet-calculatrice">Projet calculatrice</h2>
+<p>Ecrire un programme qui lit dans le terminale une chaine de caractère de la forme <code>X operation Y</code> ou <code>X</code> et <code>Y</code> sont des nombres réels et <code>operation</code> est <strong>un caractère unique représentant une opération</strong>: <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, <code>^</code>. <code>^</code> signifie &quot;à la puissance&quot;, il faut utiliser la foncion <code>pow</code> présente dans l'entête <code>math.h</code> et la librairie <code>libm</code></p>
+<p>Vous devez organiser votre programme de la manière suivante: * <code>calc.c</code> doit contenir uniquement la fonction <code>main</code> * <code>parser.h</code> doit déclarer une fonctions <code>parse</code> * <code>parser.c</code> doit définir la fonctions <code>parse</code> * <code>calc-io.h</code> doit déclarer la fonctions <code>printResult</code> * <code>calc-io.c</code> doit définir la fonctions <code>printResult</code></p>
+<p>Avec les signatures de fonctions suivantes: <code>int parse(const char * line, double *a, double *b, char *op); void printResult(double a, double b, char op);</code> le fichier <code>parse.h</code> doit aussi définir des entiers constants <code>PARSE_OK</code>, <code>PARSE_ERROR_FORMAT</code> et <code>PARSE_ERROR_OPERATION</code>.</p>
+<p>La fonction <code>parse</code> reçoit en argument une chaine de charactère. Si la chaine de caractères est de la forme <code>X operation Y</code>, la fonction retourne <code>PARSE_OK</code> et renvoie à l'aide des pointeurs donnés en arguments les valeurs <code>X</code>, <code>Y</code> et <code>operation</code> dans les arguments <code>a</code>, <code>b</code> et <code>op</code>. Si une erreur se produit, la fonction doit retourner <code>PARSE_ERROR_OPERATION</code>, resp. <code>PARSE_ERROR_FORMAT</code>, si le l'opérateur ne fait pas partie des 5 opérations prises en charge, resp. s'il y a une autre erreur liée au format.</p>
+<p>La fonction <code>printResult</code> doit afficher le calcul et le résultat associé. Exemple si je passe les valeurs <code>5</code>, <code>10</code> et <code>+</code> à la fonction <code>printResult</code> alors elle doit afficher dans le terminal <code>5 + 10 = 15</code> (suivi d'un retour à la ligne).</p>
+<p>La fonction <code>main</code> doit simplement demander à l'utilisateur d'entrer un calcul dans le bon format, et afficher le résultat.</p>
+<p>Vous devez ecrire un <code>Makefile</code> qui permet de compiler votre projet. Le Makefile doit aussi contenir une recette pour compiler le fichier <code>tests.c</code>, ainsi qu'une recette <code>clean</code> qui supprime tous les fichiers temporaires de compilation et les exécutables.</p>
+</body>
+</html>

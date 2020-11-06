@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="disque">Disque</h2>
+<h1 id="partie-1">Partie 1</h1>
+<p>Déclarer <strong>dans le fichier d'entête <code>disk.h</code></strong> une fonction <code>disk</code> qui retourne une chaine de caractère représentant un disque (voir les exemples pour comprendre).</p>
+<p>Votre fonction prendra en argument un entier positif correspondant au diamètre du disque. Ce nombre correspond donc au nombre de lignes contenues dans votre chaine de caractères. Cela correspond aussi à la taille de chacune des lignes.</p>
+<p>Pour dessiner un disque, le caractère à la ligne <code>y</code> et à la colonne <code>x</code> dans la chaine doit être le caractère <code>'#'</code> si l'inégalité suivante est vraie : <code>((d/2.0-0.5) - x)*((d/2.0-0.5) - x) + ((d/2.0-0.5) - y)*((d/2.0-0.5) - y) &lt; d*d/4.0</code> où <code>d</code> est le diamètre voulu.</p>
+<p><strong>Attention, un programme qui ne compile pas ne rapporte aucun point</strong>.</p>
+<p>Le fichier <code>tests.c</code> est un programme qui test automatiquement votre fonction. Vous pouvez aussi créer votre propre programme dans un autre fichier afin de tester votre fonction. Pour cela, vous pouvez inclure le fichier <code>disk.h</code>. Exemple de programme de test :</p>
+<p>```C</p>
+<h1 id="include-disk.h">include &quot;disk.h&quot;</h1>
+<p>int main(void) { // appel vers la fonction disk(...). } ```</p>
+<h3 id="exemple-1">Exemple 1</h3>
+<p><code>disk(4)</code> doit retourner la chaine de caractères suivante: <code>## #### ####  ##</code> Ce qui correspond en fait à ça : <code>&quot; ##\n####\n####\n ##&quot;</code></p>
+<p><strong>Attention, on parle bien de retour et non d'affichage!!</strong></p>
+<p><strong>Attention, observez bien qu'il n'y a pas d'espace entre les caractères '#' et les fins de ligne!</strong></p>
+<h3 id="exemple-2">Exemple 2</h3>
+<p><code>disk(10)</code> doit retourner la chaine de caractères suivante: <code>####  ########  ######## ########## ########## ########## ##########  ########  ########    ####</code></p>
+<h1 id="partie-2">Partie 2</h1>
+<p>Pour cette partie il faut écrire une fonction <code>disk_text</code> dans le même fichier. Le problème est similaire à la partie 1, mais cette fois-ci, au lieu d'écrire uniquement des caractères <code>'#'</code>, vous devez écrire le texte donné en argument, que vous complèterez avec le caractère <code>'.'</code> pour former un disque. Par ailleur le diamètre n'est pas donné et devra être calculé de manière à minimiser le nombre de <code>'.'</code> finaux.</p>
+<h3 id="exemple">Exemple</h3>
+<p><code>disk_text(&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&quot;)</code> doit retourner</p>
+<p><code>Lorem    ipsum do  lor sit ame  t, consecte tur adipiscin g elit, sed d o eiusmod tem por incididun t ut labore e  t dolore ma  gna aliqua.   .........     .....</code></p>
+</body>
+</html>

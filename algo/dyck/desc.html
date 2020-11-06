@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="langage-de-dyck">Langage de Dyck</h2>
+<p>un mot de Dyck est un mot &quot;bien parenthésé&quot; i.e., composé uniquement de parenthèses <code>(</code> et <code>)</code> et qui est soit le mot vide, soit la concaténation de deux mots de Dyck, soit <code>(m)</code> ou <code>m</code> est un mot de Dyck. Tous les caractères qui ne sont pas des parenthèses seront ignorés (on considère que <code>(a) ((b) )</code> est un mot de Dyck)</p>
+<p>Ecrire un programme qui accepte un argument de ligne de commande et qui retourne 0 si c'est un mot de Dyck et retourne le code d'erreur 1 sinon.</p>
+<p>Si aucun argument de ligne de commande n'est donné (ou si deux ou plus sont donnés), votre programme doit quitter avec le code d'erreur 2 et afficher dans la sortie d'erreur : <code>Usage: dyck [word]</code></p>
+<h3 id="exemples">Exemples</h3>
+<h4 id="exemple-1">Exemple 1</h4>
+<p><code>$ ./dyck &quot;()(())&quot;</code> votre programme doit retourner 0</p>
+<h4 id="exemple-2">Exemple 2</h4>
+<p><code>$ ./dyck &quot;()())&quot;</code> votre programme doit retourner 1</p>
+<h4 id="exemple-3">Exemple 3</h4>
+<p><code>$ ./dyck &quot;()(()&quot; &quot;())&quot; Usage: dyck [word]</code> votre programme doit retourner 2</p>
+<h4 id="exemple-4">Exemple 4</h4>
+<p><code>$ ./dyck &quot;()(() ())&quot; OUI</code> votre programme doit retourner 0</p>
+</body>
+</html>

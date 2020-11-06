@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="suppression-de-lettre">Suppression de lettre</h2>
+<p>Déclarer <em>dans le fichier d'entête <code>str-alloc.h</code></em> une structure nommée <code>student_t</code> qui contient un attribut de type <code>char *</code> nommé <code>first_name</code> et un attribut de type <code>char *</code> nommé <code>last_name</code>. Dans le même fichier, écrire une fonction <code>strAlloc</code> qui prend un pointeur vers structure <code>student_t</code> et un <code>unsigned long long</code> <code>n</code> et initialise les attribut <code>first_name</code> et <code>last_name</code> de cette structure en leur allouant dynamiquement de la mémoire pour <code>n</code> caractères chacun, et en initialisant tous les caractères à 0.</p>
+<p><em>Si tout se passe bien vous ne vous occuperez pas de libérer la mémoire</em> (vous pouvez voir dans le fichier <code>tests.c</code> que je la fonction appelante s'occupe de cela).</p>
+<p>Par contre si une allocation échoue, vous ferez bien attention à mettre les deux pointeurs (les attributs <code>first_name</code> et <code>last_name</code>) à <code>NULL</code> et à libérer ce que vous avez déjà alloué.</p>
+<p>Le fichier <code>tests.c</code> est un programme qui test automatiquement votre fonction. Vous pouvez aussi créer votre propre programme dans un autre fichier afin de tester votre fonction. Pour cela, vous pouvez inclure le fichier <code>str-alloc.h</code>. Exemple de programme de test :</p>
+<p>```C</p>
+<h1 id="include-str-alloc.h">include &quot;str-alloc.h&quot;</h1>
+<p>int main(void) { // appel vers la fonction strAlloc(...). }</p>
+<p>```</p>
+<h3 id="exemples">Exemples</h3>
+<p>Un pointeur <code>s</code> et le nombre 100 sont envoyé à votre fonction, après l'appel de votre fonction l'attribut <code>name</code> de <code>s</code> pointe vers un tableau de caractères dynamiquement alloué de taille 100</p>
+</body>
+</html>

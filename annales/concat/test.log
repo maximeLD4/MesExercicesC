@@ -1,0 +1,21 @@
+
+####
+#### Compilation
+####
+gcc -o tests.o -c tests.c
+gcc -o concat.o -c concat.c
+gcc -o tests tests.o concat.o
+
+####
+#### Execution
+####
+test_example_1
+Done
+test_example_2
+Done
+test_example_3
+Done
+test_example_4
+Done
+test_error_malloc
+Done

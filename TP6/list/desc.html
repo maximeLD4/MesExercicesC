@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="list">List</h2>
+<p>Le fichier <code>list.h</code> contient déjà plusieurs déclaration de fonction permettant de créer et de manipuler des structures de type <code>List</code>. Ces fonctions sont implémentées dans le fichier <code>list.c</code></p>
+<ul>
+<li>Vous devez ajoutez dans ces fichiers les fonctions suivantes:</li>
+<li><code>void * list_last(List *l)</code>: qui retourne la valeur du dernier élément, ou NULL si la liste est vide.</li>
+<li><code>void * list_get(List *l, size_t i)</code>: retourne la valeur à la ième position dans la liste, ou NULL si la liste est l'indice n'est pas correct.</li>
+<li><code>size_t list_size(List *l)</code>: retourne la taille de la liste.</li>
+<li><code>void list_free(List *l)</code>: vide et libère toutes les zones mémoires allouées pour la liste.</li>
+<li>Vous devez écrire un fichier <code>Makefile</code> permettant de compiler le fichier <code>tests.c</code> (qui utilise les fonctions déclarée dans <code>list.h</code>). Il devra contenir une règle <code>tests:</code> et une règle <code>clean:</code> permettant de supprimer les fichiers temporaires de compilation.</li>
+</ul>
+</body>
+</html>

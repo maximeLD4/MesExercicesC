@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="génération-de-nombres-aléatoires">Génération de nombres aléatoires</h2>
+<p>La fonction <code>rand</code> de la librairie standard ne permet pas de générer de nombres aléatoires très grands. On souhaite générer des nombres contenant 10 chiffres (entre 0 et 9'999'999'999). Alice et Bob ne sont pas d'accord sur la méthode à employer pour faire cela. Alice pense qu'on peut utiliser la fonction <code>rand</code> pour générer 10 chiffres (entre 0 et 9) qui mis bout à bout formeront un nombre aléatoire. Par exemple si les dix appels successifs donnent <code>0</code>, <code>8</code>, <code>1</code>, <code>2</code>, <code>5</code>, <code>0</code>, <code>1</code>, <code>3</code>, <code>3</code>, <code>9</code> alors le nombre généré sera <code>812501339</code> (il peut arriver que le nombre fasse moins de dix chiffres).</p>
+<p>Bob pense que la méthode d'Alice est trop coûteuse car elle appelle trop de fois la fonction <code>rand</code>. Bob propose donc de n'appeler <code>rand</code> que deux fois, pour générer deux nombres entre 0 et 100'000 et de les multiplier entre eux pour obtenir le nombre souhaité.</p>
+<p>Alice n'est pas d'accord car avec cette méthode le nombre 10'000'000'000 pourra être obtenu alors que l'on souhaite un nombre à 10 chiffres maximum. De plus certains nombres ne peuvent pas être obtenus, comme certains grands nombres premiers.</p>
+<p>Après une longue discussion, Bob est d'accord avec Alice, mais il persiste et affirme que ces cas sont trop rares pour arriver et donc il serait impossible de distinguer des nombres générés à l'aide de sa méthode, des nombres générés avec la méthode d'Alice.</p>
+<p><strong>Vous n'êtes pas de son avis et voulez aider Alice à prouver que Bob à tort!!</strong></p>
+<p>Pour cela il faut effectuer un test à l'aveugle : on vous donne un tableau de <code>n</code> entiers à 10 chiffres maximum, et vous devez dire si ces nombres ont été générés avec la méthode d'Alice ou la méthode de Bob.</p>
+<p>Pour vous aider, Alice a préparé un programme (<code>tests.c</code>) et vous devez implémenter la fonction <code>test</code> dans un fichier <code>test-tab.c</code> (déclarée dans <code>test-tab.h</code>) qui prend en arguments un tableau d'entiers <code>T</code> et un entier <code>n</code> (la taille du tableau <code>T</code>) et qui retourne <code>ALICE</code> si le tableau contient des nombres générés avec la méthode d'Alice, ou <code>BOB</code> si vous pensez que c'est la méthode de Bob qui a généré les nombres du tableau.</p>
+<p><strong>Vous ne devez pas toucher le fichier <code>test-tab.h</code> ni le fichier <code>tests.c</code></strong>. Vous pouvez compiler le programme tests et l'utiliser pour tester votre fonction, ou créer d'autres fichiers. Le programme <code>tests.c</code> lit d'abord un entier correspondant au nombre de tests réalisés, puis génère un tableau <code>T</code> aléatoirement selon la méthode d'Alice ou de Bob. Le tableau est ensuite envoyé à votre fonction <code>test</code> pour voir si elle détecte correctement qui a généré le tableau.</p>
+<p><strong>Comme le programme est séparé en plusieurs fichiers, vous êtes responsable de la création du Makefile,</strong> <strong>celui-ci doit contenir une règle pour générer l'exécutable <code>tests</code> et une règle clean</strong></p>
+<h3 id="particularité-de-lévaluation">Particularité de l'évaluation</h3>
+<p>Le test étant probabiliste, il est possible que les deux méthodes fournissent des résultats similaires et donc impossible d'être sûr à 100% de la méthode utilisée.</p>
+<p>Ainsi, 100 tests seront réalisés, chaque test consiste à lire 100 entiers générés par Alice ou Bob et à appeler votre fonction test pour vérifier si vous avez effectivement détecté quelle méthode à été utilisée.</p>
+<p>Si votre fonction donne un résultat correct sur 97% des tableaux testés, alors vous recevez tous les points de l'exercice, sinon, si votre méthode est correcte sur 70% des cas, alors vous recevez 20/100. Sinon vous ne recevez rien.</p>
+<p>C'est pourquoi, le fichier <code>tests.c</code> contient déjà tout ce qu'il faut pour effectuer les 100 tests.</p>
+</body>
+</html>
